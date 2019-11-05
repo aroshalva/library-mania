@@ -1,7 +1,7 @@
-import React from "react"
-import reduce from "lodash/reduce"
-import update from "immutability-helper"
-import webAPI from "./webAPI"
+import React from 'react'
+import reduce from 'lodash/reduce'
+import update from 'immutability-helper'
+import webAPI from './webAPI'
 
 const webAPIProvider = (withPendingState = true) => WrappedComponent => {
   if (withPendingState) {
@@ -21,7 +21,7 @@ const webAPIProvider = (withPendingState = true) => WrappedComponent => {
                   ...requestFuncAcc,
                   [requestFuncName]: this.wrapRequestFunc(requestFunc, requestFuncGroupKey, requestFuncName),
                 }),
-                {}
+                {},
               ),
             }),
             {},

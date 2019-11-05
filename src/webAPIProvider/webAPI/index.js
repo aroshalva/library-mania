@@ -1,4 +1,4 @@
-import * as googleBooks from "./googleBooks"
+import * as googleBooks from './googleBooks'
 
 export default {
   googleBooks,

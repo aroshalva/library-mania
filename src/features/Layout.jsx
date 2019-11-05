@@ -62,7 +62,7 @@ class Layout extends React.Component {
         </Menu>
 
         <Container text style={{ marginTop: '7em' }}>
-          <Header as='h1'>dummy content headear</Header>
+          {/* <Header as='h1'>dummy content headear</Header> */}
 
           {this.props.children}
         </Container>
