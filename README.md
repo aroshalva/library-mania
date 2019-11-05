@@ -31,12 +31,13 @@ It uses google books API under the hood, and redux to store your choices, that's
 **lodash** - javascript helper functions
 
 
+### clone repo and run: 'npm(yarn) install'
 
 ## Available Scripts
 
 ### `yarn start`
 
-### `yarn test`
+### `yarn test` Jest tests
 
 ### `yarn build`
 
