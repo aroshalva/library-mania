@@ -1,4 +1,4 @@
-import {} from '../actionTypes'
+import {} from './actionTypes'
 
 export function dumyAction() {
   return (dispatch) => {

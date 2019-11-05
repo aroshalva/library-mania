@@ -1,4 +1,4 @@
-import {} from '../actionTypes'
+import {} from './actionTypes'
 
 const initialState = {
   saved: [],

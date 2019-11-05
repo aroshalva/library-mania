@@ -3,7 +3,7 @@ import { SemanticToastContainer } from 'react-semantic-toasts'
 import { Provider } from 'react-redux'
 import 'react-semantic-toasts/styles/react-semantic-alert.css'
 import Router from './Router'
-import configureStore from '../../store/configuration'
+import configureStore from '../store/configuration'
 
 const store = configureStore()
 
