@@ -1,8 +1,10 @@
 import React from 'react'
 import { Input, Grid, Container, Divider, Pagination, Rail, Button, Popup } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 import { toast } from 'react-semantic-toasts'
 import webAPIProvider from '../webAPIProvider'
 import BookSnippet from '../shared/BookSnippet'
+import actions from '../store/categories/actions'
 
 class Discover extends React.Component {
   constructor(props) {
@@ -134,18 +136,26 @@ class Discover extends React.Component {
 
   handleAddToSaved({ id }) {
     return () => {
-      console.log(444, id)
+      const { addToSaved } = this.props
+
+      addToSaved(id)
     }
   }
 
   handleAddToFavourites({ id }) {
     return () => {
-      console.log(999, id)
+      const { addToFavourites } = this.props
+
+      addToFavourites(id)
     }
   }
 
   render() {
-    const { webAPIPending: { googleBooksPending: { searchPending, paginationPending } } } = this.props
+    const {
+      webAPIPending: {
+        googleBooksPending: { searchPending, paginationPending },
+      },
+    } = this.props
     const { searchText, searchResult, previouslySearchedText } = this.state
 
     return (
@@ -295,4 +305,10 @@ class Discover extends React.Component {
   }
 }
 
-export default webAPIProvider()(Discover)
+export default connect(
+  undefined,
+  {
+    addToSaved: actions.addToSaved,
+    addToFavourites: actions.addToFavourites,
+  },
+)(webAPIProvider()(Discover))
