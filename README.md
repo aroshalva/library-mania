@@ -11,7 +11,7 @@ If you like some of them you can also add them to "saved" or "favourites" catego
 
 It uses google books API under the hood, and redux to store your choices, that's why if you refresh page, your choices will be lost, in future improvements you can store redux state in backend database to avoid this behaviour, so that app is more usable, but since it's for demonstration I hope that's okey.
 
-### `I tried Project to be complete, as far as I could considering time restriction. First commit happened 16:15 Nov 5, once I finished working on project, I started writing README, as I'm writing this sentence it's 23:31 so little over 7 hour had passed since I started, considering few breaks I guess working time is about 4-5 hours. I would change a lot of things: write more tests, overall design and styles, configure eslint better, write cleaner code let me know if any of this becomes necessary.`
+### `I tried Project to be complete, as far as I could considering time restriction. First commit happened 16:15 Nov 5, once I finished working on project, I started writing README, as I'm writing this sentence it's 23:31 so little over 7 hour had passed since I started, considering few breaks I guess working time is about 4-5 hours. I would change a lot of things: write more tests, overall design and styles, configure eslint better, write cleaner code, add pending states so that its more user friendly and so on. let me know if any of this becomes necessary.`
 
 ### Some of the important dependencies:
 **Redux** - state management
