@@ -15,12 +15,19 @@ It uses google books API under the hood, and redux to store your choices, that's
 
 ### Some of the important dependencies:
 **Redux** - state management
+
 **React Router DOM** - routing between pages
+
 **Google Books public API** - searching books by query, fetching specific book
+
 **Semantic UI React** - component library
+
 **testing** - unit testing (integration and component testing could be added latter)
+
 **eslint** - linting, maintaining consistent style
+
 **axios** - data fetching
+
 **lodash** - javascript helper functions
 
 
