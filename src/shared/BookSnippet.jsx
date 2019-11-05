@@ -20,6 +20,7 @@ class BookSnippet extends React.Component {
               borderRadius: '4px',
               padding: '5px',
             }}
+            alt=""
           />
         )}
 

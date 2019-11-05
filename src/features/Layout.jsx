@@ -4,11 +4,10 @@ import { withRouter, Link } from 'react-router-dom'
 import classnames from 'classnames'
 import {
   Container,
-  Dropdown,
   Image,
   Menu,
 } from 'semantic-ui-react'
-import mainLibraryIcon from '../mainLibraryIcon.svg'
+import mainLibraryIcon from '../resources/mainLibraryIcon.svg'
 
 class Layout extends React.Component {
   constructor(props) {
