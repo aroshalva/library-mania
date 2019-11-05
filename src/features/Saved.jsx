@@ -66,7 +66,11 @@ class Saved extends React.Component {
 
                   <BookSnippet data={nextItem} />
 
-                  <Button color='red' onClick={this.handleRemoveFromSaved(nextItem, nextIndex)}>
+                  <Button
+                    color='red'
+                    onClick={this.handleRemoveFromSaved(nextItem, nextIndex)}
+                    style={{ marginTop: '15px' }}
+                  >
                     <Icon name='delete' /> Remove
                   </Button>
                 </Grid.Row>

@@ -66,7 +66,11 @@ class Favourites extends React.Component {
 
                   <BookSnippet data={nextItem} />
 
-                  <Button color='red' onClick={this.handleRemoveFromFavourites(nextItem, nextIndex)}>
+                  <Button
+                    color='red'
+                    onClick={this.handleRemoveFromFavourites(nextItem, nextIndex)}
+                    style={{ marginTop: '15px' }}
+                  >
                     <Icon name='delete' /> Remove
                   </Button>
                 </Grid.Row>
