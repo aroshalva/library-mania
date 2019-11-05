@@ -1,7 +1,13 @@
 export default {
-  saved: {},
+  saved: {
+    ADD: 'categories/saved/ADD',
+    REMOVE: 'categories/saved/REMOVE',
+  },
 
-  favourites: {},
+  favourites: {
+    ADD: 'categories/favourites/ADD',
+    REMOVE: 'categories/favourites/REMOVE',
+  },
 
   customCategories: {
   },
