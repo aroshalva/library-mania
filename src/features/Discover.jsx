@@ -136,17 +136,13 @@ class Discover extends React.Component {
 
   handleAddToSaved({ id }) {
     return () => {
-      const { addToSaved } = this.props
-
-      addToSaved(id)
+      this.props.addToSaved(id)
     }
   }
 
   handleAddToFavourites({ id }) {
     return () => {
-      const { addToFavourites } = this.props
-
-      addToFavourites(id)
+      this.props.addToFavourites(id)
     }
   }
 

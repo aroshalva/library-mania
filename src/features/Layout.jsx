@@ -44,7 +44,9 @@ class Layout extends React.Component {
 
             <Menu.Item as={Link} to="/saved" className={classnames({ active: this.isActive('/saved') })}>Saved</Menu.Item>
 
-            <Dropdown
+            <Menu.Item as={Link} to="/favourites" className={classnames({ active: this.isActive('/favourites') })}>Favourites</Menu.Item>
+
+            {/* <Dropdown
               item
               simple
               text='Categories'
@@ -67,7 +69,7 @@ class Layout extends React.Component {
 
                 <Dropdown.Item as={Link} to="/manage-categories">Manage Categories</Dropdown.Item>
               </Dropdown.Menu>
-            </Dropdown>
+            </Dropdown> */}
           </Container>
         </Menu>
 

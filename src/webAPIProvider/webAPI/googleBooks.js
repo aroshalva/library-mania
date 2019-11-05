@@ -1,7 +1,7 @@
 import callApi from '../callApi'
 import { GOOGLE_API_KEY, GOOGLE_BOOKS_BASE_URL } from '../../constants'
 
-export const queryVolumeById = id => callApi({
+export const queryVolumeById = ({ id }) => callApi({
   url: `${GOOGLE_BOOKS_BASE_URL}/volumes/${id}`,
   method: 'get',
   params: { key: GOOGLE_API_KEY },
