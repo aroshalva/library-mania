@@ -1,4 +1,7 @@
 import React from 'react'
+import { SemanticToastContainer } from 'react-semantic-toasts'
+import 'react-semantic-toasts/styles/react-semantic-alert.css'
+// import Router from "./Router"
 import {
   Container,
   Divider,
@@ -10,7 +13,7 @@ import {
   Menu,
   Segment,
 } from 'semantic-ui-react'
-import mainLibraryIcon from './mainLibraryIcon.svg'
+import mainLibraryIcon from '../mainLibraryIcon.svg'
 
 const FixedMenuLayout = () => (
   <div>
@@ -54,7 +57,11 @@ const FixedMenuLayout = () => (
 class App extends React.Component {
   render() {
     return (
-      <FixedMenuLayout />
+      <React.Fragment>
+        <div>dummy main index jsx</div>
+
+        {/* <SemanticToastContainer position="bottom-right" /> */}
+      </React.Fragment>
     )
   }
 }
