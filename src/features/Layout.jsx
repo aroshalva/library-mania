@@ -1,5 +1,6 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
+import classnames from 'classnames'
 import {
   Container,
   Dropdown,
@@ -8,39 +9,6 @@ import {
   Menu,
 } from 'semantic-ui-react'
 import mainLibraryIcon from '../mainLibraryIcon.svg'
-
-const MenuComponent = () => (
-  <Menu fixed='top' inverted>
-    <Container>
-      <Menu.Item as='a' header style={{ fontSize: '18px' }}>
-        <Image size='mini' src={mainLibraryIcon} style={{ marginRight: '1.5em' }} />
-
-          Library Mania
-      </Menu.Item>
-
-      <Menu.Item as='a'>Discover</Menu.Item>
-
-      <Menu.Item as='a'>Saved</Menu.Item>
-
-      <Dropdown item simple text='Categories'>
-        <Dropdown.Menu>
-          <Dropdown.Item>Favourites</Dropdown.Item>
-
-          <Dropdown.Item>
-            <i className='dropdown icon' />
-            <span className='text'>My Categories</span>
-            <Dropdown.Menu>
-              <Dropdown.Item>Dummy Category 1</Dropdown.Item>
-              <Dropdown.Item>Dummy Category 1</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown.Item>
-
-          <Dropdown.Item>Manage Categories</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-    </Container>
-  </Menu>
-)
 
 class Layout extends React.Component {
   constructor(props) {
@@ -56,7 +24,42 @@ class Layout extends React.Component {
   render() {
     return (
       <div>
-        <MenuComponent />
+        <Menu fixed='top' inverted>
+          <Container>
+            <Menu.Item as={Link} to="/" header style={{ fontSize: '18px' }}>
+              <Image size='mini' src={mainLibraryIcon} style={{ marginRight: '1.5em' }} />
+
+              Library Mania
+            </Menu.Item>
+
+            <Menu.Item
+              as={Link}
+              to="/discover"
+              className={classnames({ active: this.isActive('/discover') })}
+            >
+              Discover
+            </Menu.Item>
+
+            <Menu.Item as={Link} to="/saved" className={classnames({ active: this.isActive('/saved') })}>Saved</Menu.Item>
+
+            <Dropdown item simple text='Categories'>
+              <Dropdown.Menu>
+                <Dropdown.Item>Favourites</Dropdown.Item>
+
+                <Dropdown.Item>
+                  <i className='dropdown icon' />
+                  <span className='text'>Custom Categories</span>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>Dummy Category 1</Dropdown.Item>
+                    <Dropdown.Item>Dummy Category 1</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown.Item>
+
+                <Dropdown.Item>Manage Categories</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Container>
+        </Menu>
 
         <Container text style={{ marginTop: '7em' }}>
           <Header as='h1'>dummy content headear</Header>
