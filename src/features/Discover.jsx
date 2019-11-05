@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Grid, Container, Divider, Pagination, Rail } from 'semantic-ui-react'
+import { Input, Grid, Container, Divider, Pagination, Rail, Button, Popup } from 'semantic-ui-react'
 import { toast } from 'react-semantic-toasts'
 import webAPIProvider from '../webAPIProvider'
 import BookSnippet from '../shared/BookSnippet'
@@ -21,6 +21,8 @@ class Discover extends React.Component {
     this.handleSearchClick = this.handleSearchClick.bind(this)
     this.handlePaginationChange = this.handlePaginationChange.bind(this)
     this.handleKeyPress = this.handleKeyPress.bind(this)
+    this.handleAddToSaved = this.handleAddToSaved.bind(this)
+    this.handleAddToFavourites = this.handleAddToFavourites.bind(this)
   }
 
   getDefaultSearchResult() {
@@ -130,6 +132,18 @@ class Discover extends React.Component {
     )
   }
 
+  handleAddToSaved({ id }) {
+    return () => {
+      console.log(444, id)
+    }
+  }
+
+  handleAddToFavourites({ id }) {
+    return () => {
+      console.log(999, id)
+    }
+  }
+
   render() {
     const { webAPIPending: { googleBooksPending: { searchPending, paginationPending } } } = this.props
     const { searchText, searchResult, previouslySearchedText } = this.state
@@ -217,6 +231,43 @@ class Discover extends React.Component {
                             </Rail>
 
                             <BookSnippet data={nextItem} />
+
+                            <div style={{ padding: '8px' }}>
+                              <Popup
+                                trigger={
+                                  <Button
+                                    icon={{
+                                      name: 'file alternate',
+                                      color: 'blue',
+                                      size: 'large',
+                                    }}
+                                    circular
+                                    basic
+                                    onClick={this.handleAddToSaved(nextItem)}
+                                  />
+                                }
+                                content="Save."
+                                position="top left"
+                              />
+
+                              <Popup
+                                trigger={
+                                  <Button
+                                    icon={{
+                                      name: 'heart',
+                                      color: 'pink',
+                                      size: 'large',
+                                    }}
+                                    circular
+                                    basic
+                                    style={{ marginRight: '7px' }}
+                                    onClick={this.handleAddToFavourites(nextItem)}
+                                  />
+                                }
+                                content="Add to Favourites."
+                                position="top left"
+                              />
+                            </div>
                           </Grid.Row>
 
                           <Divider />
