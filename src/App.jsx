@@ -10,16 +10,18 @@ import {
   Menu,
   Segment,
 } from 'semantic-ui-react'
+import mainLibraryIcon from './mainLibraryIcon.svg'
 
 const FixedMenuLayout = () => (
   <div>
     <Menu fixed='top' inverted>
       <Container>
         <Menu.Item as='a' header>
-          <Image size='mini' src='/logo.png' style={{ marginRight: '1.5em' }} />
-          Project Name
+          <Image size='mini' src={mainLibraryIcon} style={{ marginRight: '1.5em' }} />
+
+          Library Mania
         </Menu.Item>
-        <Menu.Item as='a'>Home</Menu.Item>
+        <Menu.Item as='a'>Discover</Menu.Item>
 
         <Dropdown item simple text='Dropdown'>
           <Dropdown.Menu>
@@ -42,19 +44,7 @@ const FixedMenuLayout = () => (
     </Menu>
 
     <Container text style={{ marginTop: '7em' }}>
-      <Header as='h1'>Semantic UI React Fixed Template</Header>
-      <p>This is a basic fixed menu template using fixed size containers.</p>
-      <p>
-        A text container is used for the main container, which is useful for single column layouts.
-      </p>
-
-      <Image src='/images/wireframe/media-paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
+      <Header as='h1'>dummy content headear</Header>
     </Container>
   </div>
 )
