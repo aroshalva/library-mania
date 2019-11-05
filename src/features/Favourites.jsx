@@ -52,6 +52,10 @@ class Favourites extends React.Component {
 
     return (
       <Container>
+        {!bookList.length && (
+          <div>Favourites categpory is empty</div>
+        )}
+
         <Grid>
           {
             bookList.map((nextItem, nextIndex) => (nextItem ? (
@@ -70,7 +74,7 @@ class Favourites extends React.Component {
                 <Divider />
               </div>
             ) : (
-              <div key={favouritesBookIds[nextIndex]}>books fetching</div>
+              <div key={favouritesBookIds[nextIndex]}>...</div>
             )))
           }
         </Grid>

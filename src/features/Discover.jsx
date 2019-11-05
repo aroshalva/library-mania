@@ -1,4 +1,5 @@
 import React from 'react'
+import get from 'lodash/get'
 import { Input, Grid, Container, Divider, Pagination, Rail, Button, Popup } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { toast } from 'react-semantic-toasts'
@@ -134,15 +135,31 @@ class Discover extends React.Component {
     )
   }
 
-  handleAddToSaved({ id }) {
+  handleAddToSaved({ id, volumeInfo }) {
     return () => {
       this.props.addToSaved(id)
+
+      toast({
+        title: 'Added to Saved',
+        description: get(volumeInfo, 'title'),
+        time: 6000,
+        icon: 'check',
+        color: 'green',
+      })
     }
   }
 
-  handleAddToFavourites({ id }) {
+  handleAddToFavourites({ id, volumeInfo }) {
     return () => {
       this.props.addToFavourites(id)
+
+      toast({
+        title: 'Added to Favourites',
+        description: get(volumeInfo, 'title'),
+        time: 6000,
+        icon: 'check',
+        color: 'green',
+      })
     }
   }
 

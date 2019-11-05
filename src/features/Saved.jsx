@@ -52,6 +52,10 @@ class Saved extends React.Component {
 
     return (
       <Container>
+        {!bookList.length && (
+          <div>Saved categpory is empty</div>
+        )}
+
         <Grid>
           {
             bookList.map((nextItem, nextIndex) => (nextItem ? (
