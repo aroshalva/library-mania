@@ -1,10 +1,10 @@
 import React from 'react'
+import isArray from 'lodash/isArray'
 import { withRouter, Link } from 'react-router-dom'
 import classnames from 'classnames'
 import {
   Container,
   Dropdown,
-  Header,
   Image,
   Menu,
 } from 'semantic-ui-react'
@@ -17,8 +17,10 @@ class Layout extends React.Component {
     this.isActive = this.isActive.bind(this)
   }
 
-  isActive(path) {
-    return path === this.props.location.pathname
+  isActive(paths) {
+    const currentPathname = this.props.location.pathname
+
+    return isArray(paths) ? paths.includes(currentPathname) : paths === currentPathname
   }
 
   render() {
@@ -42,9 +44,17 @@ class Layout extends React.Component {
 
             <Menu.Item as={Link} to="/saved" className={classnames({ active: this.isActive('/saved') })}>Saved</Menu.Item>
 
-            <Dropdown item simple text='Categories'>
+            <Dropdown
+              item
+              simple
+              text='Categories'
+              className={classnames({ 'active-menu-item': this.isActive([
+                '/favourites',
+                '/manage-categories',
+              ]) })}
+            >
               <Dropdown.Menu>
-                <Dropdown.Item>Favourites</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/favourites" >Favourites</Dropdown.Item>
 
                 <Dropdown.Item>
                   <i className='dropdown icon' />
@@ -55,15 +65,13 @@ class Layout extends React.Component {
                   </Dropdown.Menu>
                 </Dropdown.Item>
 
-                <Dropdown.Item>Manage Categories</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/manage-categories">Manage Categories</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Container>
         </Menu>
 
         <Container text style={{ marginTop: '7em' }}>
-          {/* <Header as='h1'>dummy content headear</Header> */}
-
           {this.props.children}
         </Container>
       </div>

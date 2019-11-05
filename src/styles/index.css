@@ -21,3 +21,8 @@ body {
   font-size: 62px;
   margin-bottom: 20px;
 }
+
+.active-menu-item {
+  background: rgba(255,255,255,.15) !important;
+  color: #fff !important;
+}
