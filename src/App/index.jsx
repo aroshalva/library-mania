@@ -1,7 +1,7 @@
 import React from 'react'
 import { SemanticToastContainer } from 'react-semantic-toasts'
 import 'react-semantic-toasts/styles/react-semantic-alert.css'
-// import Router from "./Router"
+import Router from './Router'
 import {
   Container,
   Divider,
@@ -58,9 +58,9 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div>dummy main index jsx</div>
+        <Router />
 
-        {/* <SemanticToastContainer position="bottom-right" /> */}
+        <SemanticToastContainer position="bottom-right" />
       </React.Fragment>
     )
   }
